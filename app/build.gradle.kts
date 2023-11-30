@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.dicoding.todoapp"
-        minSdk = 33
+        minSdk = 21
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -55,7 +55,7 @@ dependencies {
         set("junit_version", "4.13.2")
         set("ext_junit_version", "1.1.5")
         set("espresso_version", "3.5.1")
-        set("runner_version", "1.2.0")
+        set("runner_version", "1.5.2")
 
         set("room_version", "2.6.0")
         set("arch_lifecycle_version", "2.6.2")
