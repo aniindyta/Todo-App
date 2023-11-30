@@ -21,7 +21,7 @@ class DetailTaskActivity : AppCompatActivity() {
 
         //TODO 11 : Show detail task and implement delete action
         val factory = ViewModelFactory.getInstance(this)
-        detailTaskViewModel = ViewModelProvider(this, factory).get(DetailTaskViewModel::class.java)
+        detailTaskViewModel = ViewModelProvider(this, factory)[DetailTaskViewModel::class.java]
 
         intent.extras?.getInt(TASK_ID)?.let { taskId ->
             detailTaskViewModel.setTaskId(taskId)
@@ -35,13 +35,13 @@ class DetailTaskActivity : AppCompatActivity() {
     }
 
     private fun populateTaskDetails(task: Task) {
-        val edtTitle = findViewById<TextInputEditText>(R.id.detail_ed_title)
-        val edtDescription = findViewById<TextInputEditText>(R.id.detail_ed_description)
-        val edtDueDate = findViewById<TextInputEditText>(R.id.detail_ed_due_date)
+        val title = findViewById<TextInputEditText>(R.id.detail_ed_title)
+        val description = findViewById<TextInputEditText>(R.id.detail_ed_description)
+        val dueDate = findViewById<TextInputEditText>(R.id.detail_ed_due_date)
 
-        edtTitle.setText(task.title)
-        edtDescription.setText(task.description)
-        edtDueDate.setText(DateConverter.convertMillisToString(task.dueDateMillis))
+        title.setText(task.title)
+        description.setText(task.description)
+        dueDate.setText(DateConverter.convertMillisToString(task.dueDateMillis))
     }
 
     private fun setupDeleteButton() {
