@@ -38,8 +38,7 @@ abstract class TaskDatabase : RoomDatabase() {
                         super.onCreate(db)
                         INSTANCE?.let { taskDatabase ->
                             CoroutineScope(Dispatchers.IO).launch {
-                                val taskDao = taskDatabase.taskDao()
-                                fillWithStartingData(context, taskDao)
+                                fillWithStartingData(context, taskDatabase.taskDao())
                             }
                         }
                     }
